@@ -9,4 +9,23 @@
 
     <context:annotation-config/>
     <context:component-scan base-package="org.example"/>
+
+<!--    Single Scope-->
+    <bean id="studentSingle" class="org.example.model.entity.Student" scope="singleton">
+        <property name="id" value="5"/>
+        <property name="name" value="AirBlade125"/>
+        <property name="phoneNumber" value="Don't have"/>
+        <property name="address" value="DN"/>
+        <property name="age" value="5"/>
+    </bean>
+
+<!--    Prototype-Scope-->
+    <bean id="studentPrototype" class="org.example.model.entity.Student" scope="prototype">
+        <property name="id" value="5"/>
+        <property name="name" value="AirBlade125"/>
+        <property name="phoneNumber" value="Don't have"/>
+        <property name="address" value="DN"/>
+        <property name="age" value="5"/>
+    </bean>
+
 </beans>

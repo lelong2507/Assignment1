@@ -12,11 +12,15 @@ public class Main {
 
         Student std3 = new Student(3, "VuCo", "012343212","QN",20, false);
         Student std4 = new Student(4, "NguyenOC","04563218", "QN", 20, false);
+        Student std5 = (Student) applicationContext.getBean("studentSingle");
+        Student std6 = (Student) applicationContext.getBean("studentPrototype");
 
         // Add Student method
         stdService.addStudent(std3);
         stdService.addStudent(std4);
-
+        stdService.addStudent(std5);
+        std6.setName("Sh125");
+        stdService.addStudent(std6);
         // Delete Student method
         stdService.deleteStudent(3);
 
@@ -26,6 +30,8 @@ public class Main {
         // Check isMilitary
 
         // Show all Student in the student list
+        System.out.println("Prototype after change");
+        System.out.println(std6.getName());
         stdService.showAll();
 
         System.out.println(stdService.isMilitary(4));
